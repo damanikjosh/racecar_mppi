@@ -1,6 +1,10 @@
 #ifndef ANGLES_CUH_
 #define ANGLES_CUH_
 
+#define M_PIf float(M_PI)
+#define M_PI_2f float(M_PI_2)
+#define M_PI_4f float(M_PI_4)
+
 namespace angle_utils
 {
 /**
@@ -19,10 +23,10 @@ __host__ __device__ static inline double normalizeAngle(double angle)
 // different systems will have slightly different values.
 __host__ __device__ static inline float normalizeAngle(float angle)
 {
-  const float result = fmodf(angle + M_PIf32, 2.0f * M_PIf32);
+  const float result = fmodf(angle + M_PIf, 2.0f * M_PIf);
   if (result <= 0.0f)
-    return result + M_PIf32;
-  return result - M_PIf32;
+    return result + M_PIf;
+  return result - M_PIf;
 }
 
 /**

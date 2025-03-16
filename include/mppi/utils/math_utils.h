@@ -5,6 +5,10 @@
 #ifndef MATH_UTILS_H_
 #define MATH_UTILS_H_
 
+#define M_PIf float(M_PI)
+#define M_PI_2f float(M_PI_2)
+#define M_PI_4f float(M_PI_4)
+
 // Needed for sampling without replacement
 #include <chrono>
 #include <type_traits>
